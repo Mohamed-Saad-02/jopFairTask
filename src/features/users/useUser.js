@@ -13,7 +13,7 @@ export function useUser() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `http://localhost:3000/customers?id=${userId}&_embed=transactions`
+          `https://my-json-server.typicode.com/Mohamed-Saad-02/jopFairTask/customers?id=${userId}&_embed=transactions`
         );
         const data = await response.json();
 
