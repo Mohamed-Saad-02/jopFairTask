@@ -6,6 +6,12 @@ const StyledSearchBy = styled.div`
   align-items: center;
   gap: 1.8rem;
   flex-wrap: wrap;
+
+  @media (max-width: 767px) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
   @media (max-width: 556px) {
     & input {
       width: 100%;

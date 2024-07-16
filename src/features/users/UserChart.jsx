@@ -18,6 +18,11 @@ const StyledUserChart = styled(UserBox)`
   & .recharts-cartesian-grid-vertical line {
     stroke: var(--color-grey-300);
   }
+
+  @media (max-width: 640px) {
+    padding: 1.5rem;
+    font-size: 14px;
+  }
 `;
 
 function UserChart({ transactions, totalAmount }) {

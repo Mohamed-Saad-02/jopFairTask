@@ -11,7 +11,8 @@ const StyledTable = styled.div`
 
   @media (max-width: 640px) {
     font-size: 12px;
-    overflow: overlay;
+    min-width: 600px;
+    width: 100%;
   }
 `;
 
@@ -21,6 +22,10 @@ const CommonRow = styled.div`
   column-gap: 2.4rem;
   align-items: center;
   transition: none;
+
+  @media (max-width: 767px) {
+    grid-template-columns: auto repeat(5, 1fr) auto;
+  }
 `;
 
 const StyledHeader = styled(CommonRow)`
