@@ -17,7 +17,7 @@ export function useUsers() {
       try {
         setIsLoading(true);
         const response = await fetch(
-          `http://localhost:3000/customers?_page=${page}&_per_page=${PAGE_SIZE}&_embed=transactions`
+          `http://localhost:3000/customers?_page=${page}&_per_page=${PAGE_SIZE}`
         );
         const data = await response.json();
 
@@ -32,6 +32,8 @@ export function useUsers() {
 
     getUsers();
   }, [page]);
+
+  console.log(users);
 
   return { users, isLoading, error };
 }
