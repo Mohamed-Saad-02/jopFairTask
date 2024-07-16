@@ -13,6 +13,9 @@ const StyledSelect = styled.select`
   font-weight: 500;
   box-shadow: var(--shadow-sm);
   cursor: pointer;
+
+  width: fit-content;
+  margin-left: auto;
 `;
 
 function Select({ value, options, type, onChange }) {

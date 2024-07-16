@@ -15,6 +15,17 @@ const Charts = styled.div`
   justify-content: end;
 `;
 
+const StatsStyled = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  @media (max-width: 767px) {
+    flex-wrap: wrap;
+  }
+`;
+
 function UserDetail() {
   const { isLoading, user = [] } = useUser();
 
@@ -33,9 +44,9 @@ function UserDetail() {
         <ButtonText onClick={moveBack}>&larr; Back</ButtonText>
       </Row>
 
-      <Row $type="horizontal">
+      <StatsStyled $type="horizontal">
         <Stats userId={userId} name={name} amount={totalAmount} />
-      </Row>
+      </StatsStyled>
 
       <Charts>
         <UserChart transactions={transactions} totalAmount={totalAmount} />

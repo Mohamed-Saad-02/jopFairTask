@@ -5,6 +5,12 @@ const StyledSearchBy = styled.div`
   display: flex;
   align-items: center;
   gap: 1.8rem;
+  flex-wrap: wrap;
+  @media (max-width: 556px) {
+    & input {
+      width: 100%;
+    }
+  }
 `;
 
 const InputField = styled.input`
@@ -50,7 +56,7 @@ function SearchBy() {
       <InputField
         $kind="white"
         type="text"
-        placeholder="Search By Transaction (Amount-LastDate)"
+        placeholder="Search By (Amount-LastDate)"
         value={searchTransactions}
         onChange={(e) => handleChangeTransactions(e.target.value)}
       />

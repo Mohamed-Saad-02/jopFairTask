@@ -9,14 +9,11 @@ import { useSortUsers } from "./useSortUsers";
 import { useSearchDataUser } from "./useSearchDataUser";
 
 function UserTable() {
-  const { isLoading, users = {} } = useUsers();
-
-  const data = users?.data;
+  const { isLoading, users = [] } = useUsers();
 
   // 1.Search
-
   const { handleSearchName, handleSearchTransactions, searchName } =
-    useSearchDataUser(data);
+    useSearchDataUser(users);
 
   const searched = searchName.length
     ? handleSearchName()
@@ -45,7 +42,7 @@ function UserTable() {
         />
 
         <Table.Footer>
-          <Pagination countUsers={users.items} />
+          <Pagination countUsers={users.length} />
         </Table.Footer>
       </Table>
     </Menus>
